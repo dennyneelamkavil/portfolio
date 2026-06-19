@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+:root {
+  /* Base */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  /* Surface */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Brand */
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary */
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  /* Muted */
+  --muted: 220 14% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  /* Accent */
+  --accent: 199 89% 48%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Danger */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Borders */
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+
+  /* Focus */
+  --ring: 217 91% 60%;
+
+  --radius: 1rem;
+}
+
+.dark {
+  /* Background */
+  --background: 224 71% 4%;
+  --foreground: 210 40% 98%;
+
+  /* Cards */
+  --card: 222 47% 8%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 8%;
+  --popover-foreground: 210 40% 98%;
+
+  /* Brand */
+  --primary: 217 91% 65%;
+  --primary-foreground: 222 47% 4%;
+
+  /* Secondary */
+  --secondary: 222 47% 12%;
+  --secondary-foreground: 210 40% 98%;
+
+  /* Muted */
+  --muted: 222 47% 12%;
+  --muted-foreground: 215 20% 70%;
+
+  /* Accent */
+  --accent: 199 89% 48%;
+  --accent-foreground: 210 40% 98%;
+
+  /* Danger */
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Borders */
+  --border: 223 47% 14%;
+  --input: 223 47% 14%;
+
+  /* Focus */
+  --ring: 217 91% 65%;
+}
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+/* Base styles */
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Selection */
+
+::selection {
+  background: hsl(var(--primary) / 0.2);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Utilities */
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@utility animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom animations */
+
+@keyframes blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.glass {
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border));
+}

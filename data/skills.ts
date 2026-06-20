@@ -45,7 +45,7 @@ export const skillCategories = [
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
 
-    skills: ["MongoDB", "Mongoose", "MySQL", "Firebase"],
+    skills: ["MongoDB", "Mongoose", "MySQL"],
   },
 
   {
@@ -68,14 +68,11 @@ export const skillCategories = [
 ];
 
 export const additionalSkills = [
-  "Socket.io",
-  "Framer Motion",
   "Zod",
   "React Hook Form",
   "Shadcn UI",
   "SEO",
   "Excel Reports",
-  "Linux",
   "Responsive Design",
   "API Integration",
   "MVC Architecture",

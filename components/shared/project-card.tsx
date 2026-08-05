@@ -39,18 +39,20 @@ export function ProjectCard({
     >
       {/* Image */}
 
-      <div className="relative h-60 overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover transition duration-700 group-hover:scale-105"
-        />
+      {image && (
+        <div className="relative h-60 overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition duration-700 group-hover:scale-105"
+          />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
 
-        <Badge className="absolute right-4 top-4">{category}</Badge>
-      </div>
+          <Badge className="absolute right-4 top-4">{category}</Badge>
+        </div>
+      )}
 
       {/* Content */}
 

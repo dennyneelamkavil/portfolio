@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { PersonSchema } from "@/components/seo/person-schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dennynj.in"),
@@ -36,6 +37,9 @@ export const metadata: Metadata = {
 
   creator: "Denny N J",
   publisher: "Denny N J",
+
+  applicationName: "Denny N J Portfolio",
+  category: "Technology",
 
   alternates: {
     canonical: "https://dennynj.in",
@@ -87,7 +91,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <PersonSchema />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
